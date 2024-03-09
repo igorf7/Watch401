@@ -41,8 +41,8 @@ static uint8_t
 
 //static char *colon = ":";
 
-//volatile uint8_t
-//    selMode = 0;
+volatile uint8_t
+    selMode = 0;
 
 bool timeStrRunning;
 
