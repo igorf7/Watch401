@@ -23,8 +23,7 @@ static PrmList_t prmList[SENSORS_QUNTITY];
 static RadioEvents_t RadioEvents;
 
 static uint32_t
-    i,
-    rxUtcValue;
+    i, rxUtcValue;
 
 static int16_t rxRssi;
 
@@ -55,9 +54,9 @@ static char
     strMin[3],
     strSec[3],
     strDate[16],
-    runningLine[RUNNING_STR_MAX];
+    runningLine[STR_BUFF_SIZE];
 
-static char lineBuffer[RUNNING_STR_MAX];
+static char lineBuffer[STR_BUFF_SIZE];
 
 static char
     strTemper[SENSORS_QUNTITY][8],
@@ -161,7 +160,7 @@ static void LetLineRun()
             break;
     }
     
-    while (strlen(lineBuffer) < RUNNING_STR_MAX) {
+    while (strlen(lineBuffer) < STR_BUFF_SIZE) {
         strcat(lineBuffer, " ");
     }
     
@@ -284,7 +283,8 @@ void BackgroundTask(void)
     }
     
     /* Picture loop */
-    u8g_FirstPage(&u8g);        
+    u8g_FirstPage(&u8g);
+    
     do {
         DrawPage(pageNow);
     }

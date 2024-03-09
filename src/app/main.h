@@ -1,6 +1,6 @@
-/*
+/**
  * main.h
-*/
+ */
 #ifndef __MAIN_H
 #define __MAIN_H
 
@@ -9,18 +9,17 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define RUNNING_STR_MAX         (uint8_t)32
+#define STR_BUFF_SIZE           (uint8_t)32
 #define MAX_MSGSTR_SIZE         (uint8_t)26     // up to 26 symbols/line
 #define TIME_X_POS              (uint8_t)53
 #define SIMBOL_WIDTH            (uint8_t)9      // simbol width in rus9x15 font
-#define CHANGE_SIMB_POS         (uint8_t)(255 - SIMBOL_WIDTH)
+#define CHANGE_SIMB_POS         (uint8_t)(256 - SIMBOL_WIDTH)
 #define PARAMS_QUNTITY          (uint8_t)3
 #define SENSORS_QUNTITY         (uint8_t)2      // including internal sensor
 #define MAX_PACKET_SIZE         (uint8_t)64     // Including Size Byte
 #define MAX_DATA_SIZE           (uint8_t)58     // MAX_PACKET_SIZE - Header Size - Size Byte
 #define OWN_ID                  (uint8_t)1
 
-//typedef char(*pt2)[];
 
 /* Display's page to show */
 typedef enum {
